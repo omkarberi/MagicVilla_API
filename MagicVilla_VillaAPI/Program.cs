@@ -1,3 +1,5 @@
+using MagicVilla_VillaAPI.Logging;
+
 internal class Program
 {
     private static void Main(string[] args)
@@ -10,6 +12,7 @@ internal class Program
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+        builder.Services.AddSingleton<ILogging, Logging>();
 
         var app = builder.Build();
 
