@@ -1,3 +1,5 @@
+using AutoMapper;
+using MagicVilla_VillaAPI;
 using MagicVilla_VillaAPI.Data;
 using MagicVilla_VillaAPI.Logging;
 using Microsoft.EntityFrameworkCore;
@@ -16,7 +18,7 @@ internal class Program
 
 
         // Add services to the container.
-
+        builder.Services.AddAutoMapper(typeof(MappingConfig));
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
